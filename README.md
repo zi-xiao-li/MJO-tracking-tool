@@ -106,7 +106,3 @@ The tracking procedure consists of the following steps:
 * Excel outputs provide detailed per-event information for further analysis or visualization.
 
 ---
-
-我可以帮你把这个 README 再生成一个 **中英双语版本**，这样直接放在 GitHub 上，方便国内外导师和合作者阅读。
-
-你希望我帮你生成双语版吗？
