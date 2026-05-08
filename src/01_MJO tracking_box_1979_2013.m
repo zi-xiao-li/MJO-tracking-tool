@@ -1,4 +1,3 @@
-
 %-----------------------------------------------------------------------
 % 1. Selection of the box for data preprocessing, which will be used later in wkSpaceTime processing
 % 2. Preprocessing: OLR data from 1979–2013, removing February 29 (to align each year to 365 days)
