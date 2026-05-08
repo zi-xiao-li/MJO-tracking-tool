@@ -101,11 +101,12 @@ The tracking procedure consists of the following steps:
 
 ---
 
-## Notes
+## Figures
 
-* Preprocessing scripts ensure consistency in time coordinates and removal of leap days.
-* The tracking algorithm works automatically for all winter seasons in the dataset.
-* Users can adjust the reference longitude or tracking domain as needed for regional studies.
-* Excel outputs provide detailed per-event information for further analysis or visualization.
+Example of MJO phase speed tracking:
+
+![MJO Tracking Example](figures/MJO_example.png)
+
+The figure shows a Hovmöller diagram of a single MJO event, with the reference longitude (90°E) and the final selected tracking line highlighted.
 
 ---
