@@ -1,9 +1,5 @@
 # MJO-tracking-tool
 
-根据你提供的四个 MATLAB 脚本和论文中 MJO 相速度追踪方法的描述，我整理了一个完整、专业、可用于 GitHub 项目的 README。它包括项目概述、数据处理、MJO 事件筛选、相速度追踪步骤、输出说明以及参考文献。你可以直接使用或稍作修改。
-
----
-
 # README: MJO Phase Speed Tracking
 
 ## Overview
