@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project provides MATLAB scripts for tracking the phase speed of Madden-Julian Oscillation (MJO) events over the equatorial region using daily OLR (Outgoing Longwave Radiation) data. The method follows the approach described in Ling et al. (2014), Zhang & Ling (2017), and Chen & Wang (2020), which allows for quantitative assessment of MJO propagation in a specific longitudinal band and supports evaluation of numerical model performance.
+This project provides MATLAB scripts for tracking the phase speed of Madden-Julian Oscillation (MJO) events over the equatorial region using daily OLR (Outgoing Longwave Radiation) data. The method follows the approach described in Ling et al. (2014), Zhang & Ling (2017), and Chen & Wang (2020), which allows for quantitative assessment of MJO propagation in a specific longitudinal band.
 
 Key features:
 
@@ -90,9 +90,9 @@ The tracking procedure consists of the following steps:
 ## References
 
 * Ling et al., 2014: *Regional and global evaluation of tropical convection models using MJO tracking.*
-* Wheeler & Hendon, 2004: *An all-season real-time multivariate MJO index.*
-* Zhang & Ling, 2017: *Refinements to MJO tracking methodology for regional assessments.*
-* Chen & Wang, 2020: *Improved MJO tracking algorithm for tropical climate diagnostics.*
+* Wheeler & Kiladis, 1999: *Convectively Coupled Equatorial Waves: Analysis of Clouds and Temperature in the Wavenumber–Frequency Domain.*
+* Zhang & Ling, 2017: *Barrier Effect of the Indo-Pacific Maritime Continent on the MJO: Perspectives from Tracking MJO Precipitation.*
+* Chen & Wang, 2020: *Circulation Factors Determining the Propagation Speed of the Madden–Julian Oscillation.*
 
 ---
 
