@@ -64,7 +64,6 @@ clear ncid
 
 ncid=netcdf.create('D:\project\data\1\olr_1979_2013.nc','CLOBBER');
 %% 2 Define dimensions
-
 dimidx = netcdf.defDim(ncid,'lon',size(olr,1)); 
 dimidy = netcdf.defDim(ncid,'lat',size(olr,2));    
 dimidz = netcdf.defDim(ncid,'time',size(olr,3));
