@@ -15,10 +15,14 @@ Key features:
 
 ## Data Preprocessing
 
-1. **Input Data:** Daily OLR data (1979–2014) in NetCDF format (`olr.day.mean.nc`).
-2. **Leap Year Handling:** February 29 removed to standardize each year to 365 days.
-3. **Box Selection:** Data preprocessed for the study domain (10°S–10°N; 20°E–140°W) to compute Hovmöller plots.
-4. **NetCDF Output:** Preprocessed OLR stored in `olr_1979_2013.nc` and `olr_1979_2014.nc`.
+1. **Input Data:** Daily OLR data (1979–2014) in NetCDF format (`olr.day.mean.nc`).  
+2. **Leap Year Handling:** February 29 is removed to standardize each year to 365 days.  
+3. **NetCDF Output:** Preprocessed OLR is saved as `olr_1979_2013.nc` and `olr_1979_2014.nc`.  
+4. **Box Selection & Spectral Filtering Workflow:**  
+   * Preprocessed OLR data are processed in NCL using `wkSpaceTime` for spatiotemporal spectral analysis.  
+   * This analysis identifies the wavenumber–frequency–equivalent-depth ranges of the Madden-Julian Oscillation (MJO) and convectively coupled Kelvin waves (CCKWs).  
+   * After filtering in NCL, the resulting data slices are exported to MATLAB for detailed MJO tracking.
+
 
 ---
 
