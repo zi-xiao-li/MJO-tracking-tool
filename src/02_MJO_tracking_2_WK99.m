@@ -132,7 +132,7 @@ for s = 2:length(MJO_index)-1
         MJO_min_OLR = [MJO_min_OLR B];
     end
 end
-disp(['1979-2013年共发生MJO事件：',num2str(length(MJO_date)),'次'])
+disp(['Total MJO events from 1979 to 2013: ', num2str(length(MJO_date))])
 
 % Select winter MJO events; count1 records all initial winter information: date, MJO index, etc.
 % count1 = [];
@@ -155,16 +155,17 @@ disp(['1979-2013年共发生MJO事件：',num2str(length(MJO_date)),'次'])
 % count_start = count1(var1+1,:);
 % count_start = [count1(1,:);count_start];
 % count_day   = count_end(:,6)-count_start(:,6);
-% disp(['1979-2013年冬季共发生MJO事件',num2str(length(count_day)),'次，其中：'])
-% disp(['（1）主对流在IO区最长停留时间：',num2str(max(count_day+5)),'天'])
-% disp(['（2）主对流在IO区最短停留时间：',num2str(min(count_day+5)),'天'])
+% disp(['Total winter MJO events from 1979 to 2013: ', num2str(length(count_day)), ', among them:'])
+% disp(['(1) Longest residence time of main convection in the IO region: ', num2str(max(count_day+5)), ' days'])
+% disp(['(2) Shortest residence time of main convection in the IO region: ', num2str(min(count_day+5)), ' days'])
+
 % Determine the minimum OLR index corresponding to each MJO event
 % for ii=1:length(count_end)
 %     var4          = [];
 %     var4(:,[1:3]) = time([count_start(ii,6):count_end(ii,6)],[1:3]);
 %     var4(:,4)     = MJO_index(count_start(ii,6):count_end(ii,6));
-%     var2          = [var2 min(var4(:,4))]; %每次MJO中的lowest OLR
-%     var3          = var4(find(var4(:,4)==min(var4(:,4))),[1:3]); % *lowest OLR对应日期
+%     var2          = [var2 min(var4(:,4))]; 
+%     var3          = var4(find(var4(:,4)==min(var4(:,4))),[1:3]); 
 %     count2(ii,[1:3]) = var3;
 % end
 % count2(:,4) = var2;
