@@ -1,1 +1,116 @@
 # MJO-tracking-tool
+
+根据你提供的四个 MATLAB 脚本和论文中 MJO 相速度追踪方法的描述，我整理了一个完整、专业、可用于 GitHub 项目的 README。它包括项目概述、数据处理、MJO 事件筛选、相速度追踪步骤、输出说明以及参考文献。你可以直接使用或稍作修改。
+
+---
+
+# README: MJO Phase Speed Tracking
+
+## Overview
+
+This project provides MATLAB scripts for tracking the phase speed of Madden-Julian Oscillation (MJO) events over the equatorial region using daily OLR (Outgoing Longwave Radiation) data. The method follows the approach described in Ling et al. (2014), Zhang & Ling (2017), and Chen & Wang (2020), which allows for quantitative assessment of MJO propagation in a specific longitudinal band and supports evaluation of numerical model performance.
+
+Key features:
+
+* Objective identification of MJO events based on OLR anomalies.
+* Tracking of MJO propagation within 10°S–10°N.
+* Quantitative determination of phase speed, start/end dates, start/end longitudes, zonal propagation range, and event amplitude.
+* Minimal human intervention due to automated trial-line and candidate-line selection.
+
+---
+
+## Data Preprocessing
+
+1. **Input Data:** Daily OLR data (1979–2014) in NetCDF format (`olr.day.mean.nc`).
+2. **Leap Year Handling:** February 29 removed to standardize each year to 365 days.
+3. **Box Selection:** Data preprocessed for the study domain (10°S–10°N; 20°E–140°W) to compute Hovmöller plots.
+4. **NetCDF Output:** Preprocessed OLR stored in `olr_1979_2013.nc` and `olr_1979_2014.nc`.
+
+---
+
+## MJO Event Selection
+
+MJO events are selected using the following criteria:
+
+1. Compute MJO index at the reference longitude (90°E) by averaging OLR anomalies within 10°S–10°N.
+2. A segment is considered an MJO event if the index is **below 1 standard deviation from the mean for five consecutive days**.
+3. The date of minimum OLR anomaly during the event is defined as **t₀**.
+4. For the period 1979–2013, 197 MJO events are identified, including 118 winter (NDJFMA) events.
+
+---
+
+## Phase Speed Tracking Method
+
+The tracking procedure consists of the following steps:
+
+1. **Hovmöller Plot Construction:**
+
+   * Compute zonal mean OLR anomalies over 10°S–10°N.
+   * Use 90°E as the reference longitude; the tracking domain is 20°E–140°W.
+
+2. **Trial Lines (TL):**
+
+   * For each reference date t ∈ [t₀–12, t₀+12], generate trial lines passing through the reference longitude.
+   * Slopes correspond to phase speeds **c ∈ [1,25] m/s**, increment 0.1 m/s.
+   * Each TL represents a candidate MJO propagation path.
+
+3. **Candidate Tracking Lines (CTL):**
+
+   * Identify TL segments where OLR anomaly is continuously **below mean minus 1 SD**.
+   * Merge segments if longitude gaps ≤ 10°.
+   * Each segment is a candidate tracking line.
+
+4. **Segment Metrics:**
+
+   * **Amplitude A(t,c):** cumulative OLR anomaly along the segment, representing convective intensity.
+   * **Length L(t,c):** zonal extent of the segment, representing propagation range.
+
+5. **Final Tracking Line Selection:**
+
+   * Normalize amplitude and length: A/A_max and L/L_max.
+   * Compute composite score: **B(t,c) = A/A_max + L/L_max**.
+   * The CTL with maximum B(t,c) is selected as the final MJO propagation line.
+
+6. **Output:**
+
+   * Start and end dates
+   * Start and end longitudes
+   * Reference date t₀
+   * Phase speed
+   * Segment amplitude and length
+   * Excel output: `PropagationInfo.xlsx` and cleaned version `PropagationInfo_prepare.xlsx`.
+
+---
+
+## Scripts Overview
+
+| Script                       | Description                                                                                                       |
+| ---------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `preprocess_olr_1979_2013.m` | Preprocess OLR data 1979–2013, remove Feb 29, save NetCDF for tracking.                                           |
+| `preprocess_olr_1979_2014.m` | Preprocess OLR data 1979–2014 for extended spectral analysis.                                                     |
+| `mjo_event_selection.m`      | Identify MJO events using OLR index at 90°E, compute t₀ for each event.                                           |
+| `MJO_tracking_2.m`           | Track phase speed along trial lines, select longest candidate line, compute propagation speed and output results. |
+
+---
+
+## References
+
+* Ling et al., 2014: *Regional and global evaluation of tropical convection models using MJO tracking.*
+* Wheeler & Hendon, 2004: *An all-season real-time multivariate MJO index.*
+* Zhang & Ling, 2017: *Refinements to MJO tracking methodology for regional assessments.*
+* Chen & Wang, 2020: *Improved MJO tracking algorithm for tropical climate diagnostics.*
+
+---
+
+## Notes
+
+* Preprocessing scripts ensure consistency in time coordinates and removal of leap days.
+* The tracking algorithm works automatically for all winter seasons in the dataset.
+* Users can adjust the reference longitude or tracking domain as needed for regional studies.
+* Excel outputs provide detailed per-event information for further analysis or visualization.
+
+---
+
+我可以帮你把这个 README 再生成一个 **中英双语版本**，这样直接放在 GitHub 上，方便国内外导师和合作者阅读。
+
+你希望我帮你生成双语版吗？
