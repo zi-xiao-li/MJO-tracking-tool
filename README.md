@@ -116,3 +116,9 @@ Example outputs from the MJO tracking workflow:
 * Chen & Wang, 2020: *Circulation Factors Determining the Propagation Speed of the Madden–Julian Oscillation.*
 
 ---
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
