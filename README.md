@@ -82,12 +82,13 @@ The tracking procedure consists of the following steps:
 
 ## Scripts Overview
 
-| Script                       | Description                                                                                                       |
-| ---------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `preprocess_olr_1979_2013.m` | Preprocess OLR data 1979–2013, remove Feb 29, save NetCDF for tracking.                                           |
-| `preprocess_olr_1979_2014.m` | Preprocess OLR data 1979–2014 for extended spectral analysis.                                                     |
-| `mjo_event_selection.m`      | Identify MJO events using OLR index at 90°E, compute t₀ for each event.                                           |
-| `MJO_tracking_2.m`           | Track phase speed along trial lines, select longest candidate line, compute propagation speed and output results. |
+| Script                               | Description                                                                                   |
+| ------------------------------------ | --------------------------------------------------------------------------------------------- |
+| `01_MJO_tracking_box_1979_2013.m`    | Preprocess OLR data for NCL power spectrum analysis (1979–2013).                              |
+| `02_MJO_tracking_filter_1979_2014.m` | Preprocess OLR data for NCL filtering (1979–2014).                                            |
+| `03_MJO_tracking_slice.m`            | Slice the filtered data for MJO tracking.                                                     |
+| `04_MJO_tracking_algorithm.m`        | Implement the phase speed tracking algorithm following Ling et al. (2014).                    |
+| `05_MJO_tracking_Hovmoller.m`        | Generate Hovmöller plots for visualization of MJO propagation.                                |
 
 ---
 
