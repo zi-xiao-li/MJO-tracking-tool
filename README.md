@@ -103,7 +103,7 @@ Example outputs from the MJO tracking workflow:
 
 ### Hovmöller Diagram for Fast vs. Slow MJO Events
 <p align="center">
-  <img src="figures/mjo_hovmoller_fast_vs_slow.png" width="80%" />
+  <img src="figures/mjo_hovmoller_fast_vs_slow.png" width="90%" />
 </p>
 
 ---
