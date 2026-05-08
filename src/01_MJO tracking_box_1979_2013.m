@@ -67,7 +67,7 @@ ncid=netcdf.create('D:\project\data\1\olr_1979_2013.nc','CLOBBER');
 dimidx = netcdf.defDim(ncid,'lon',size(olr,1)); 
 dimidy = netcdf.defDim(ncid,'lat',size(olr,2));    
 dimidz = netcdf.defDim(ncid,'time',size(olr,3));
-%% 3 Assign attributes
+%% 3 Assign attributes 
 %lon
 varid_lon=netcdf.defVar(ncid,'lon','double',dimidx);
 netcdf.putAtt(ncid,varid_lon,'standard_name','Longitude');
@@ -88,15 +88,15 @@ netcdf.putAtt(ncid,varid_time,'units','days since 1979-01-01 00:00:00');
 varid_olr=netcdf.defVar(ncid,'olr','double',[dimidx dimidy dimidz]);
 netcdf.putAtt(ncid,varid_olr,'_FillValue',-9999);
 netcdf.putAtt(ncid,varid_olr,'missing_value',-9999);
-%% 4 Complete the NetCDF file definition schema
+%% 4 Complete the NetCDF file definition schema 
 netcdf.endDef(ncid)
-%% 5 Write data into the NetCDF file
+%% 5 Write data into the NetCDF file 
 netcdf.putVar(ncid,varid_olr,olr);
 netcdf.putVar(ncid,varid_lon,lon);
 netcdf.putVar(ncid,varid_lat,lat);
 netcdf.putVar(ncid,varid_time,[1:size(olr,3)]);  
-%% 6 Close the file
+%% 6 Close the file 
 netcdf.close(ncid);
 info_box = ncinfo('D:\project\data\1\olr_1979_2013.nc');
 
-% Next, connect to spectral analysis.ncl
+% Next, connect to spectral analysis.ncl 
