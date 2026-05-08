@@ -1,8 +1,8 @@
 
 %-----------------------------------------------------------------------
-% 1. box的选取，进行数据预处理，后续进行wkSpaceTime处理
-% 2. 预处理：1979-2013年OLR数据，去掉2月29日（去掉闰年，365对齐）
-% 3. 虽然2013冬季是到14年4月，但是选box的数据是到2013年12月31日，参考WK99
+% 1. Selection of the box for data preprocessing, which will be used later in wkSpaceTime processing
+% 2. Preprocessing: OLR data from 1979–2013, removing February 29 (to align each year to 365 days)
+% 3. Although the winter of 2013 extends to April 2014, the data selected for the box is only up to December 31, 2013, following WK99
 %-----------------------------------------------------------------------     
 
 
@@ -41,8 +41,8 @@ a     = find(time(:,1)==t_start&time(:,2)==1&time(:,3)==1);
 b     = find(time(:,1)==t_end&time(:,2)==12&time(:,3)==31);
 olr   = olr_pre(:,:,[a:b]);
 time  = time_pre([a:b],:,:);
-% 计算符合clmDayTLL的日期，删掉2月29日
-% 主要目的是把闰年去掉，便于计算吧，365d一个维度
+% Calculate the dates matching clmDayTLL, removing February 29
+% The main purpose is to remove leap days, so that each year has 365 days for easier calculation
 for ii=1:t_end-t_start+1
 	c         = find(time(:,1)==t_start+ii-1);
 	d         = length(c);
@@ -63,11 +63,11 @@ time(:,4) = b;
 clear ncid
 
 ncid=netcdf.create('D:\project\data\1\olr_1979_2013.nc','CLOBBER');
-%% 2 定义维度
+%% 2 Define dimensions
 dimidx = netcdf.defDim(ncid,'lon',size(olr,1)); 
 dimidy = netcdf.defDim(ncid,'lat',size(olr,2));    
 dimidz = netcdf.defDim(ncid,'time',size(olr,3));
-%% 3 赋予属性
+%% 3 Assign attributes
 %lon
 varid_lon=netcdf.defVar(ncid,'lon','double',dimidx);
 netcdf.putAtt(ncid,varid_lon,'standard_name','Longitude');
@@ -88,15 +88,15 @@ netcdf.putAtt(ncid,varid_time,'units','days since 1979-01-01 00:00:00');
 varid_olr=netcdf.defVar(ncid,'olr','double',[dimidx dimidy dimidz]);
 netcdf.putAtt(ncid,varid_olr,'_FillValue',-9999);
 netcdf.putAtt(ncid,varid_olr,'missing_value',-9999);
-%% 4 完成netCDF文件定义模式
+%% 4 Complete the NetCDF file definition schema
 netcdf.endDef(ncid)
-%% 5 把数据写到netcdf的文件中
+%% 5 Write data into the NetCDF file
 netcdf.putVar(ncid,varid_olr,olr);
 netcdf.putVar(ncid,varid_lon,lon);
 netcdf.putVar(ncid,varid_lat,lat);
 netcdf.putVar(ncid,varid_time,[1:size(olr,3)]);  
-%% 6 关闭文件
+%% 6 Close the file
 netcdf.close(ncid);
 info_box = ncinfo('D:\project\data\1\olr_1979_2013.nc');
 
-% 接下来衔接spectral analysis.ncl
+% Next, connect to spectral analysis.ncl
