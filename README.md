@@ -105,10 +105,14 @@ The tracking procedure consists of the following steps:
 
 Example outputs from the MJO tracking workflow:
 
-### Hovmöller Diagram for Fast vs. Slow MJO Events
-![Hovmöller Fast vs Slow](figures/mjo_hovmoller_fast_vs_slow.png)
-
 ### Histogram of MJO Phase Speeds
-![MJO Phase Speed Histogram](figures/mjo_phase_speed_histogram.png)
+<p align="center">
+  <img src="figures/mjo_phase_speed_histogram.png" width="40%" />
+</p>
+
+### Hovmöller Diagram for Fast vs. Slow MJO Events
+<p align="center">
+  <img src="figures/mjo_hovmoller_fast_vs_slow.png" width="80%" />
+</p>
 
 ---
