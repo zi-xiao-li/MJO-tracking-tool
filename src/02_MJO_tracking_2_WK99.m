@@ -96,31 +96,6 @@ end
 olr_IO_std   = std(MJO_index);
 olr_IO_mean  = mean(MJO_index);
 
-% Continuous five-day MJO index below 1 SD, and select the minimum value among these five days
-% MJO_date      = [];
-% MJO_min_OLR   = [];
-% for s = 1:length(MJO_index)-4
-%     B = MJO_index(s:s+4); 
-%     if (length(find(B <= olr_IO_mean-olr_IO_std))==5) 
-%         MJO_date    = [MJO_date s];
-%         MJO_min_OLR = [MJO_min_OLR min(B)]; 
-%     end
-%     
-%     if length(MJO_date)>=2     
-%         ll_1=MJO_date(end);
-%         ll_2=MJO_date(end-1);
-%         if ll_1-ll_2~=1
-%             MJO_date = [MJO_date(1:end-1) ll_2+1 ll_2+2 ll_2+3 ll_2+4 MJO_date(end)];            
-%         end
-%         ll_3=MJO_min_OLR(end);
-%         ll_4=MJO_min_OLR(end-1);
-%         if ll_1-ll_2~=1
-%             MJO_min_OLR = [MJO_min_OLR(1:end-1) MJO_min_OLR(end-1) MJO_min_OLR(end-1)...
-%                     MJO_min_OLR(end-1) MJO_min_OLR(end-1) MJO_min_OLR(end)];            
-%         end
-%     end
-% end
-
 % MJO index minimum value and < 1 SD
 MJO_date     = [];
 MJO_min_OLR  = [];
@@ -133,41 +108,6 @@ for s = 2:length(MJO_index)-1
 end
 disp(['Total MJO events from 1979 to 2013: ', num2str(length(MJO_date))])
 
-% Select winter MJO events; count1 records all initial winter information: date, MJO index, etc.
-% count1 = [];
-% count2 = [];
-% var1   = [];
-% var2   = [];
-% var1       = time(MJO_date,:);
-% var1(:,6)  = MJO_date;
-% var1(:,7)  = MJO_min_OLR; 
-% var2       = find(var1(:,2)==11|var1(:,2)==12|var1(:,2)==1|...
-%                         var1(:,2)==2|var1(:,2)==3|var1(:,2)==4); 
-% count1     = var1(var2,:); 
-% Determine the start date, end date, and duration
-% var1=[];
-% var2=[];
-% var3=[];
-% var1        = find(diff(count1(:,6))~=1);
-% count_end   = count1(var1,:);            
-% count_end   = [count_end; count1(end,:)];
-% count_start = count1(var1+1,:);
-% count_start = [count1(1,:);count_start];
-% count_day   = count_end(:,6)-count_start(:,6);
-% disp(['Total winter MJO events from 1979 to 2013: ', num2str(length(count_day)), ', among them:'])
-% disp(['(1) Longest residence time of main convection in the IO region: ', num2str(max(count_day+5)), ' days'])
-% disp(['(2) Shortest residence time of main convection in the IO region: ', num2str(min(count_day+5)), ' days'])
-
-% Determine the minimum OLR index corresponding to each MJO event
-% for ii=1:length(count_end)
-%     var4          = [];
-%     var4(:,[1:3]) = time([count_start(ii,6):count_end(ii,6)],[1:3]);
-%     var4(:,4)     = MJO_index(count_start(ii,6):count_end(ii,6));
-%     var2          = [var2 min(var4(:,4))]; 
-%     var3          = var4(find(var4(:,4)==min(var4(:,4))),[1:3]); 
-%     count2(ii,[1:3]) = var3;
-% end
-% count2(:,4) = var2;
 
 count2 = time(MJO_date,:);
 count2 = count2(:,[1:3]); 
