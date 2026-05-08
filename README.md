@@ -20,7 +20,7 @@ Key features:
 3. **NetCDF Output:** Preprocessed OLR is saved as `olr_1979_2013.nc` and `olr_1979_2014.nc`.  
 4. **Box Selection & Spectral Filtering Workflow:**  
    * Preprocessed OLR data are processed in NCL using `wkSpaceTime` for spatiotemporal spectral analysis.  
-   * This analysis identifies the wavenumber–frequency–equivalent-depth ranges of the Madden-Julian Oscillation (MJO) and convectively coupled Kelvin waves (CCKWs).  
+   * This analysis identifies the wavenumber–frequency–equivalent-depth ranges of the MJO and convectively coupled Kelvin waves (CCKWs).  
    * After filtering in NCL, the resulting data slices are exported to MATLAB for detailed MJO tracking.
 
 
