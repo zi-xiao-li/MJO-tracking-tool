@@ -98,7 +98,7 @@ Example outputs from the MJO tracking workflow:
 
 ### Histogram of MJO Phase Speeds
 <p align="center">
-  <img src="figures/mjo_phase_speed_histogram.png" width="50%" />
+  <img src="figures/mjo_phase_speed_histogram.png" width="45%" />
 </p>
 
 ### Hovmöller Diagram for Fast vs. Slow MJO Events
