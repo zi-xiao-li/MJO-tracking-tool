@@ -92,15 +92,6 @@ The tracking procedure consists of the following steps:
 
 ---
 
-## References
-
-* Ling et al., 2014: *Global versus Local MJO Forecast Skill of the ECMWF Model during DYNAMO.*
-* Wheeler & Kiladis, 1999: *Convectively Coupled Equatorial Waves: Analysis of Clouds and Temperature in the Wavenumber–Frequency Domain.*
-* Zhang & Ling, 2017: *Barrier Effect of the Indo-Pacific Maritime Continent on the MJO: Perspectives from Tracking MJO Precipitation.*
-* Chen & Wang, 2020: *Circulation Factors Determining the Propagation Speed of the Madden–Julian Oscillation.*
-
----
-
 ## Figures
 
 Example outputs from the MJO tracking workflow:
@@ -114,5 +105,14 @@ Example outputs from the MJO tracking workflow:
 <p align="center">
   <img src="figures/mjo_hovmoller_fast_vs_slow.png" width="80%" />
 </p>
+
+---
+
+## References
+
+* Ling et al., 2014: *Global versus Local MJO Forecast Skill of the ECMWF Model during DYNAMO.*
+* Wheeler & Kiladis, 1999: *Convectively Coupled Equatorial Waves: Analysis of Clouds and Temperature in the Wavenumber–Frequency Domain.*
+* Zhang & Ling, 2017: *Barrier Effect of the Indo-Pacific Maritime Continent on the MJO: Perspectives from Tracking MJO Precipitation.*
+* Chen & Wang, 2020: *Circulation Factors Determining the Propagation Speed of the Madden–Julian Oscillation.*
 
 ---
