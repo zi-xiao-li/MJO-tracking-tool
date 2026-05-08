@@ -103,10 +103,12 @@ The tracking procedure consists of the following steps:
 
 ## Figures
 
-Example of MJO phase speed tracking:
+Example outputs from the MJO tracking workflow:
 
-![MJO Tracking Example](figures/MJO_example.png)
+### Hovmöller Diagram for Fast vs. Slow MJO Events
+![Hovmöller Fast vs Slow](figures/mjo_hovmoller_fast_vs_slow.png)
 
-The figure shows a Hovmöller diagram of a single MJO event, with the reference longitude (90°E) and the final selected tracking line highlighted.
+### Histogram of MJO Phase Speeds
+![MJO Phase Speed Histogram](figures/mjo_phase_speed_histogram.png)
 
 ---
