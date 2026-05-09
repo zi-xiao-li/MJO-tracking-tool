@@ -110,10 +110,10 @@ Example outputs from the MJO tracking workflow:
 
 ## References
 
-* Chen & Wang, 2020: *Circulation Factors Determining the Propagation Speed of the Madden–Julian Oscillation.*
-* Ling et al., 2014: *Global versus Local MJO Forecast Skill of the ECMWF Model during DYNAMO.*
-* Wheeler & Kiladis, 1999: *Convectively Coupled Equatorial Waves: Analysis of Clouds and Temperature in the Wavenumber–Frequency Domain.*
-* Zhang & Ling, 2017: *Barrier Effect of the Indo-Pacific Maritime Continent on the MJO: Perspectives from Tracking MJO Precipitation.*
+* Chen, G., and B. Wang, 2020: Circulation Factors Determining the Propagation Speed of the Madden–Julian Oscillation. Journal of Climate, 33, 3367–3380, https://doi.org/10.1175/JCLI-D-19-0661.1. *
+* Ling, J., P. Bauer, P. Bechtold, A. Beljaars, R. Forbes, F. Vitart, M. Ulate, and C. Zhang, 2014: Global versus Local MJO Forecast Skill of the ECMWF Model during DYNAMO. Monthly Weather Review, 142, 2228–2247, https://doi.org/10.1175/MWR-D-13-00292.1. *
+* Wheeler, M., and G. N. Kiladis, 1999: Convectively Coupled Equatorial Waves: Analysis of Clouds and Temperature in the Wavenumber–Frequency Domain. Journal of the Atmospheric Sciences, 56, 374–399, https://doi.org/10.1175/1520-0469(1999)056<0374:CCEWAO>2.0.CO;2. *
+* Zhang, C., and J. Ling, 2017: Barrier Effect of the Indo-Pacific Maritime Continent on the MJO: Perspectives from Tracking MJO Precipitation. Journal of Climate, 30, 3439–3459, https://doi.org/10.1175/JCLI-D-16-0614.1. *
 
 ---
 
