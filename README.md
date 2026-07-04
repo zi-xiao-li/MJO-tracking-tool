@@ -80,15 +80,18 @@ The tracking procedure consists of the following steps:
 
 ---
 
-## Scripts Overview
+## Repository Structure
 
-| Script                               | Description                                                                                   |
-| ------------------------------------ | --------------------------------------------------------------------------------------------- |
-| `01_MJO_tracking_box_1979_2013.m`    | Preprocess OLR data for NCL power spectrum analysis (1979–2013).                              |
-| `02_MJO_tracking_filter_1979_2014.m` | Preprocess OLR data for NCL filtering (1979–2014).                                            |
-| `03_MJO_tracking_slice.m`            | Slice the filtered data for MJO tracking.                                                     |
-| `04_MJO_tracking_algorithm.m`        | Implement the phase speed tracking algorithm following Ling et al. (2014).                    |
-| `05_MJO_tracking_Hovmoller.m`        | Generate Hovmöller plots for visualization of MJO propagation.                                |
+| File / Directory | Description |
+|------------------|-------------|
+| `src/01_MJO_tracking_box_1979_2013.m` | Preprocess OLR data for NCL power spectrum analysis (1979–2013).  |
+| `src/02_MJO_tracking_filter_1979_2014.m` | Preprocess OLR data for NCL filtering (1979–2014). |
+| `src/03_MJO_tracking_slice.m` | Slice the filtered data for MJO tracking.  |
+| `src/04_MJO_tracking_algorithm.m` | Implements the objective MJO phase-speed tracking algorithm following Ling et al. (2014). |
+| `src/05_MJO_tracking_Hovmoller.m` | Generates Hovmöller diagrams for visualization of MJO propagation. |
+| `figures/` | Example figures including MJO phase-speed distributions and Hovmöller composites. |
+| `README.md` | Project documentation. |
+| `LICENSE` | MIT License. |
 
 ---
 
